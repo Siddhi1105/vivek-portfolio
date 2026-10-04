@@ -1,0 +1,404 @@
+/* ===============================
+   ABOUT BADGE
+================================= */
+
+.about{
+    position:relative;
+}
+
+.about-header{
+    position:absolute;
+    top:110px;
+    left:0;
+    z-index:20;
+}
+
+.about-badge{
+
+    width:170px;
+    height:60px;
+
+    background:#111;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:18px;
+
+    color:#fff;
+
+}
+
+.about-badge span{
+
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:2px;
+
+}
+
+.about-badge h5{
+
+    margin:0;
+
+    font-size:14px;
+    font-weight:500;
+
+    letter-spacing:4px;
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+.about-wrapper{
+    display:grid;
+    grid-template-columns:330px 1fr;
+    gap:60px;
+    align-items:center;
+    margin-bottom:25px;
+}
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.about-left{
+
+    display:flex;
+    justify-content:center;
+    
+
+}
+
+.about-image{
+
+    width:300px;
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.about-image img{
+
+    width:100%;
+    display:block;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+    filter:grayscale(100%);
+
+}
+
+.about-image:hover img{
+
+    transform:scale(1.03);
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.about-content{
+
+    max-width:620px;
+    
+
+}
+
+.about-subtitle{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:#9d7d45;
+
+    letter-spacing:8px;
+
+    font-size:.82rem;
+
+    text-transform:uppercase;
+
+}
+
+.about-title{
+
+    margin:0 0 28px;
+
+    font-family:var(--font-heading);
+
+     font-size:clamp(3rem,4vw,4rem);
+    margin-bottom:20px;
+
+    line-height:.95;
+
+    font-weight:400;
+
+    color:#111;
+
+}
+
+.about-content p{
+
+   margin-bottom:14px;
+    line-height:1.75;
+    font-size:.98rem;
+
+    color:#666;
+
+}
+/* ==========================================================
+   SOFTWARE SKILLS
+========================================================== */
+
+.about-skills{
+    width:100%;
+
+    margin-top:30px;
+
+    padding-top:35px;
+
+    border-top:1px solid rgba(0,0,0,.08);
+}
+
+.about-skills h4{
+
+    margin-bottom:15px;
+
+    font-size:.82rem;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    color:var(--color-accent);
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   SKILLS
+========================================================== */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:35px;
+
+    text-align:center;
+
+    align-items:start;
+
+    margin:40px 0;
+}
+
+.skills-grid span{
+
+    position:relative;
+
+    font-size:1rem;
+
+    color:var(--color-primary);
+
+    font-weight:500;
+
+    padding-left:18px;
+
+    transition:.35s;
+
+}
+
+.skills-grid span::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--color-accent);
+
+}
+
+.skills-grid span:hover{
+
+    color:var(--color-accent);
+
+    transform:translateX(4px);
+
+}
+
+
+/* ==========================================================
+   RESUME BUTTON
+========================================================== */
+
+
+
+.skill-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    background:none;
+
+    border:none;
+
+    box-shadow:none;
+
+    padding:0;
+}
+
+.skill-item img{
+
+    width:48px;
+
+    height:48px;
+
+    object-fit:contain;
+
+    margin-bottom:12px;
+}
+
+.skill-item span{
+
+    font-size:.82rem;
+
+    color:var(--color-primary);
+
+    margin-top:4px;
+}
+
+/* ==========================================================
+   SOFTWARE SKILLS
+========================================================== */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:24px;
+    align-items:center;
+    justify-items:center;
+    margin:35px 0 45px;
+}
+
+.skill-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition:.35s ease;
+}
+
+.skill-item{
+
+    width:120px;
+    height:120px;
+
+    border-radius:10px;
+
+    transition:.35s;
+
+}
+
+.skill-item:hover{
+
+    background:#fff;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transform:translateY(-8px);
+
+}
+
+.skill-item span{
+    margin:0;
+    padding:0;
+    font-size:.85rem;
+    font-weight:500;
+    color:#222;
+    letter-spacing:.4px;
+}
+
+.skill-item span::before{
+    display:none;
+}
+
+.resume-btn{
+    width:260px;
+    height:50px;
+
+    margin:8px auto 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--color-primary);
+
+    background:transparent;
+    color:var(--color-primary);
+
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.88rem;
+    font-weight:500;
+
+    transition:all .35s ease;
+}
+
+.resume-btn:hover{
+
+    background:var(--color-accent);
+    color:#fff;
+    border-color:var(--color-accent);
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(181,141,76,.25);
+
+}
+
+.about-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+}

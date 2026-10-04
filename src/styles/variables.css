@@ -1,0 +1,64 @@
+:root {
+
+  /* ===========================
+      COLORS
+  ============================ */
+
+  --color-primary: #111111;
+  --color-secondary: #ffffff;
+  --color-accent: #c69a63;
+  --color-background: #faf8f5;
+  --color-grey: #7b7b7b;
+  --color-border: #e7e7e7;
+
+  /* ===========================
+      TYPOGRAPHY
+  ============================ */
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ===========================
+      FONT SIZES
+  ============================ */
+
+  --fs-hero: clamp(4rem, 10vw, 8rem);
+
+  --fs-h1: clamp(2.8rem, 5vw, 4.5rem);
+
+  --fs-h2: clamp(2rem, 4vw, 3rem);
+
+  --fs-h3: 1.5rem;
+
+  --fs-body: 1rem;
+
+  --fs-small: .875rem;
+
+  /* ===========================
+      FONT WEIGHT
+  ============================ */
+
+  --fw-light:300;
+  --fw-regular:400;
+  --fw-medium:500;
+  --fw-semibold:600;
+
+  /* ===========================
+      SPACING
+  ============================ */
+
+  --section-padding:120px;
+  --container-width:1400px;
+
+  /* ===========================
+      BORDER RADIUS
+  ============================ */
+
+  --radius:10px;
+
+  /* ===========================
+      TRANSITION
+  ============================ */
+
+  --transition:.4s ease;
+}

@@ -1,0 +1,1397 @@
+/* ==========================================================
+   PROJECT DETAILS
+========================================================== */
+
+.project-details {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    background: #F8F5EF;
+
+    padding: 110px 0 120px;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   CONTENT LAYER
+========================================================== */
+
+.project-details > *:not(.architecture-bg) {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* ==========================================================
+   COMMON CONTAINER
+========================================================== */
+
+.project-details-header,
+.project-details-image,
+.project-tabs,
+.project-overview {
+
+    width: min(92%, 1400px);
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+/* ==========================================================
+   ARCHITECTURAL BACKGROUND
+========================================================== */
+
+.architecture-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    opacity: 0.4;
+
+}
+
+
+.grid-lines {
+
+    position: absolute;
+
+    inset: -150px;
+
+    background-image:
+
+        linear-gradient(
+            rgba(120, 100, 75, 0.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(120, 100, 75, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 90px 90px;
+
+    animation: architecturalGrid 40s linear infinite;
+
+}
+
+
+/* ==========================================================
+   FLOATING LINES
+========================================================== */
+
+.floating-line {
+
+    position: absolute;
+
+    height: 1px;
+
+    background: rgba(170, 125, 70, 0.15);
+
+    transform-origin: left center;
+
+}
+
+
+.line-one {
+
+    width: 420px;
+
+    top: 22%;
+
+    left: -420px;
+
+    transform: rotate(-18deg);
+
+    animation:
+        architecturalLineOne
+        20s
+        ease-in-out
+        infinite;
+
+}
+
+
+.line-two {
+
+    width: 520px;
+
+    top: 52%;
+
+    right: -520px;
+
+    transform: rotate(12deg);
+
+    animation:
+        architecturalLineTwo
+        26s
+        ease-in-out
+        infinite;
+
+}
+
+
+.line-three {
+
+    width: 360px;
+
+    top: 78%;
+
+    left: -360px;
+
+    transform: rotate(-8deg);
+
+    animation:
+        architecturalLineThree
+        23s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ==========================================================
+   PROJECT HEADER
+========================================================== */
+
+.project-details-header {
+
+    padding-top: 30px;
+
+    padding-bottom: 45px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* ==========================================================
+   TITLE + CATEGORY SAME LINE
+========================================================== */
+
+.project-heading {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 28px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.project-heading h1 {
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(3.8rem, 6vw, 6.5rem);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    color: #111;
+
+    margin: 0;
+
+}
+
+
+.project-heading span {
+
+    font-family: var(--font-body);
+
+    font-size: 0.75rem;
+
+    font-weight: 400;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: #777;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==========================================================
+   HERO IMAGE
+========================================================== */
+
+.project-details-image {
+
+    margin-top: 55px;
+
+    height: min(72vh, 720px);
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+}
+
+
+.project-details-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.2,.6,.2,1);
+
+}
+
+
+.project-details-image:hover img {
+
+    transform: scale(1.025);
+
+}
+
+
+/* ==========================================================
+   PROJECT NAVIGATION
+========================================================== */
+
+.project-tabs {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0;
+
+    margin-top: 28px;
+
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* ==========================================================
+   NAVIGATION BUTTONS
+========================================================== */
+
+.project-tabs button {
+
+    position: relative;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 10px 28px 10px 0;
+
+    margin-right: 28px;
+
+    font-family: inherit;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #777;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.project-tabs button::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 2px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--color-accent);
+
+    transition: width 0.35s ease;
+
+}
+
+
+.project-tabs button:hover {
+
+    color: #111;
+
+}
+
+
+.project-tabs button:hover::after {
+
+    width: calc(100% - 28px);
+
+}
+
+
+.project-tabs button.active {
+
+    color: #111;
+
+}
+
+
+.project-tabs button.active::after {
+
+    width: calc(100% - 28px);
+
+}
+
+
+/* ==========================================================
+   OVERVIEW
+========================================================== */
+
+.project-overview {
+
+    display: grid;
+
+    grid-template-columns: 30% 70%;
+
+    padding-top: 100px;
+
+    padding-bottom: 80px;
+
+}
+
+
+.overview-label {
+
+    font-size: 0.72rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--color-accent);
+
+    padding-top: 10px;
+
+}
+
+
+.overview-content {
+
+    max-width: 760px;
+
+}
+
+
+.overview-content h2 {
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(2.3rem, 4vw, 4rem);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: #111;
+
+    margin: 0 0 35px;
+
+}
+
+
+.overview-content p {
+
+    max-width: 620px;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    color: #666;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes architecturalGrid {
+
+    0% {
+
+        transform: translate(0, 0);
+
+    }
+
+    50% {
+
+        transform: translate(45px, 45px);
+
+    }
+
+    100% {
+
+        transform: translate(90px, 90px);
+
+    }
+
+}
+
+
+@keyframes architecturalLineOne {
+
+    0% {
+
+        left: -420px;
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        left: 110%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes architecturalLineTwo {
+
+    0% {
+
+        right: -520px;
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        right: 110%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes architecturalLineThree {
+
+    0% {
+
+        left: -360px;
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        left: 110%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PROJECT NOT FOUND
+========================================================== */
+
+.project-not-found {
+
+    min-height: 70vh;
+
+    background: #F8F5EF;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.project-not-found h2 {
+
+    font-family: var(--font-heading);
+
+    font-size: 3rem;
+
+    font-weight: 400;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .project-details {
+
+        padding-top: 80px;
+
+    }
+
+
+    .project-details-header {
+
+        padding-bottom: 40px;
+
+    }
+
+
+    .project-details-image {
+
+        height: 55vh;
+
+        margin-top: 40px;
+
+    }
+
+
+    .project-overview {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-top: 70px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 650px) {
+
+    .project-details {
+
+        padding-bottom: 70px;
+
+    }
+
+
+    .project-heading {
+
+        gap: 12px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .project-heading h1 {
+
+        font-size: 3.5rem;
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .project-heading span {
+
+        font-size: 0.7rem;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .project-details-image {
+
+        height: 45vh;
+
+        margin-top: 30px;
+
+        border-radius: 2px;
+
+    }
+
+
+    .project-tabs {
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        padding-bottom: 20px;
+
+        scrollbar-width: none;
+
+    }
+
+
+    .project-tabs::-webkit-scrollbar {
+
+        display: none;
+
+    }
+
+
+    .project-tabs button {
+
+        flex-shrink: 0;
+
+        font-size: 0.7rem;
+
+        margin-right: 22px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .overview-content h2 {
+
+        font-size: 2.4rem;
+
+    }
+
+
+    .overview-content p {
+
+        font-size: 0.9rem;
+
+        line-height: 1.8;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCE MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .grid-lines,
+    .floating-line {
+
+        animation: none;
+
+    }
+
+    .project-details-image img {
+
+        transition: none;
+
+    }
+
+}
+/* ==========================================================
+   PROJECT ASSETS
+========================================================== */
+
+.project-assets {
+
+    width: min(92%, 1400px);
+
+    margin: 100px auto 0;
+
+}
+
+
+/* ==========================================================
+   ASSET SECTION
+========================================================== */
+
+.asset-section {
+
+    margin-bottom: 140px;
+
+}
+
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.asset-section-title {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+
+    border-bottom: 1px solid rgba(0,0,0,.12);
+
+    padding-bottom: 20px;
+
+}
+
+
+.asset-section-title span {
+
+    font-size: .7rem;
+
+    letter-spacing: 2px;
+
+    color: var(--color-accent);
+
+}
+
+
+.asset-section-title h2 {
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    font-weight: 400;
+
+    margin: 0;
+
+    color: #111;
+
+}
+
+
+/* ==========================================================
+   IMAGE GRID
+========================================================== */
+
+.asset-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* ==========================================================
+   ASSET CARD
+========================================================== */
+
+.asset-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #eee;
+
+}
+
+
+.asset-card img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    transition:
+        transform .8s
+        cubic-bezier(.2,.6,.2,1);
+
+}
+
+
+/* ==========================================================
+   IMAGE HOVER
+========================================================== */
+
+.asset-card:hover img {
+
+    transform: scale(1.025);
+
+}
+
+
+/* ==========================================================
+   SUBPROJECTS
+========================================================== */
+
+.subproject {
+
+    margin-bottom: 100px;
+
+}
+
+
+.subproject h3 {
+
+    font-family: var(--font-heading);
+
+    font-size: 2.3rem;
+
+    font-weight: 400;
+
+    margin: 0 0 30px;
+
+    color: #222;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .project-assets {
+
+        margin-top: 70px;
+
+    }
+
+
+    .asset-section {
+
+        margin-bottom: 90px;
+
+    }
+
+
+    .asset-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .asset-section-title {
+
+        gap: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .asset-section-title h2 {
+
+        font-size: 3rem;
+
+    }
+
+
+    .subproject {
+
+        margin-bottom: 70px;
+
+    }
+
+
+    .subproject h3 {
+
+        font-size: 2rem;
+
+    }
+
+}
+
+/* =========================================
+   PROJECT TABS / NAVIGATION
+========================================= */
+
+.project-tabs {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 68px;
+
+    padding: 0 0 22px;
+
+    margin-top: 45px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.project-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Individual links */
+
+.project-tabs a {
+    position: relative;
+
+    flex-shrink: 0;
+
+    display: inline-block;
+
+    padding: 0;
+
+    margin: 0;
+
+    color: #777;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    text-decoration: none;
+
+    font-family: var(--font-body);
+
+    font-size: 0.82rem;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Hover */
+
+.project-tabs a:hover {
+    color: #111;
+}
+
+
+/* Active */
+
+.project-tabs a.active {
+    color: #111;
+}
+
+
+/* Orange underline */
+
+.project-tabs a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -23px;
+
+    width: 100%;
+
+    height: 2px;
+
+    background: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+
+    .project-tabs {
+        gap: 35px;
+
+        margin-top: 30px;
+
+        padding-bottom: 18px;
+    }
+
+    .project-tabs a {
+        font-size: 0.72rem;
+
+        letter-spacing: 1.3px;
+    }
+
+    .project-tabs a.active::after {
+        bottom: -19px;
+    }
+
+}
+
+
+
+/* =========================================
+   PROJECT DETAILS CONTENT
+========================================= */
+
+.project-details {
+    position: relative;
+
+    min-height: 100vh;
+
+    background: #F8F5EF;
+
+    overflow: hidden;
+}
+
+
+/* Keeps content below permanent navbar */
+
+.project-details-inner {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 105px 5vw 80px;
+}
+
+
+/* =========================================
+   PROJECT HEADER
+========================================= */
+
+.project-details-header {
+    width: 100%;
+
+    margin-bottom: 45px;
+}
+
+.project-heading {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 28px;
+
+    flex-wrap: wrap;
+}
+
+.project-heading h1 {
+    font-family: var(--font-heading);
+
+    font-size: clamp(3.8rem, 6vw, 6.5rem);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    color: #111;
+
+    margin: 0;
+}
+
+.project-heading span {
+    font-family: var(--font-body);
+
+    font-size: 0.75rem;
+
+    font-weight: 400;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: #777;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MAIN IMAGE
+========================================= */
+
+.project-details-image {
+    width: 100%;
+
+    overflow: hidden;
+
+    margin-bottom: 0;
+}
+
+.project-details-image img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 70vh;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   PROJECT TABS
+========================================= */
+
+.project-tabs {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 68px;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.project-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.project-tabs a {
+    position: relative;
+
+    flex-shrink: 0;
+
+    display: inline-block;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-family: var(--font-body);
+
+    font-size: 0.82rem;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: color 0.3s ease;
+}
+
+.project-tabs a:hover {
+    color: #111;
+}
+
+.project-tabs a.active {
+    color: #111;
+}
+
+.project-tabs a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -23px;
+
+    width: 100%;
+
+    height: 2px;
+
+    background: var(--color-accent);
+}
+
+
+/* =========================================
+   PROJECT OVERVIEW
+========================================= */
+
+.project-overview {
+    display: grid;
+
+    grid-template-columns: 28% 72%;
+
+    gap: 30px;
+
+    padding: 120px 0 80px;
+}
+
+.overview-label {
+    font-family: var(--font-body);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 4px;
+
+    color: var(--color-accent);
+
+    text-transform: uppercase;
+}
+
+.overview-content h2 {
+    max-width: 900px;
+
+    margin: 0 0 25px;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+.overview-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .project-details-inner {
+        padding: 90px 20px 60px;
+    }
+
+    .project-heading {
+        gap: 12px;
+    }
+
+    .project-heading h1 {
+        font-size: 3.5rem;
+    }
+
+    .project-heading span {
+        font-size: 0.65rem;
+
+        letter-spacing: 2px;
+    }
+
+    .project-tabs {
+        gap: 35px;
+
+        padding: 18px 0;
+    }
+
+    .project-tabs a {
+        font-size: 0.72rem;
+    }
+
+    .project-overview {
+        grid-template-columns: 1fr;
+
+        padding: 80px 0 50px;
+    }
+
+    .overview-content h2 {
+        font-size: 2.8rem;
+    }
+
+}

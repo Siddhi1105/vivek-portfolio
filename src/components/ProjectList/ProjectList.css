@@ -1,0 +1,402 @@
+/* ==========================================================
+   PROJECT SECTION
+========================================================== */
+
+.projects{
+
+    background:#F8F5EF;
+
+    padding:100px 0;
+
+}
+
+.projects .container{
+
+    width:min(92%,1400px);
+
+    margin:auto;
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.projects-header{
+
+    margin-bottom:70px;
+
+}
+
+.projects-tag{
+
+    display:block;
+
+    color:var(--color-accent);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:.85rem;
+
+    margin-bottom:18px;
+
+}
+
+.projects-title{
+
+    font-family:var(--font-heading);
+
+    font-size:4.2rem;
+
+    font-weight:400;
+
+}
+
+
+/* ==========================================================
+   WRAPPER
+========================================================== */
+
+.projects-wrapper{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:55px;
+
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.project-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.project-image{
+
+    position:relative;
+
+    width:100%;
+
+    height:420px;
+
+    overflow:hidden;
+
+}
+
+.project-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .8s ease;
+
+}
+
+.project-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        180deg,
+
+        rgba(0,0,0,.10),
+
+        rgba(0,0,0,.42)
+
+    );
+
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.project-info{
+
+    position:absolute;
+
+    left:50px;
+
+    right:50px;
+
+    bottom:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    color:#fff;
+
+    z-index:5;
+
+}
+
+.project-left{
+
+    display:flex;
+
+    gap:22px;
+
+}
+
+.project-number{
+
+    font-size:.95rem;
+
+    letter-spacing:2px;
+
+    color:#d8b17b;
+
+}
+
+.project-left h3{
+
+    font-family:var(--font-heading);
+
+    font-size:2.6rem;
+
+    font-weight:400;
+
+    margin-bottom:6px;
+
+}
+
+.project-left p{
+
+    font-size:.95rem;
+
+    letter-spacing:1px;
+
+    opacity:.9;
+
+}
+
+.project-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.project-year{
+
+    font-size:.9rem;
+
+    letter-spacing:2px;
+
+}
+
+
+/* ==========================================================
+   PROJECT ARROW
+========================================================== */
+
+.project-arrow{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    color:#fff;
+
+    background:transparent;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.project-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.project-card:hover .project-arrow{
+
+    background:var(--color-accent);
+
+    border-color:var(--color-accent);
+
+    transform:translateX(6px);
+
+}
+
+.project-card:hover h3{
+
+    color:#d8b17b;
+
+}
+
+
+/* ==========================================================
+   ARROW ICON
+========================================================== */
+
+.project-arrow svg{
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+.project-card:hover .project-arrow svg{
+
+    transform:translateX(2px);
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:768px){
+
+    .projects{
+
+        padding:70px 0;
+
+    }
+
+    .projects-title{
+
+        font-size:3rem;
+
+    }
+
+    .project-image{
+
+        height:350px;
+
+    }
+
+    .project-info{
+
+        left:25px;
+
+        right:25px;
+
+        bottom:25px;
+
+    }
+
+    .project-left{
+
+        gap:12px;
+
+    }
+
+    .project-left h3{
+
+        font-size:1.8rem;
+
+    }
+
+    .project-left p{
+
+        font-size:.8rem;
+
+    }
+
+    .project-arrow{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .project-image{
+
+        height:300px;
+
+    }
+
+    .project-info{
+
+        align-items:flex-end;
+
+    }
+
+    .project-number{
+
+        display:none;
+
+    }
+
+    .project-left h3{
+
+        font-size:1.5rem;
+
+    }
+
+    .project-right{
+
+        gap:10px;
+
+    }
+
+    .project-year{
+
+        font-size:.75rem;
+
+    }
+
+}

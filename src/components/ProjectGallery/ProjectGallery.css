@@ -1,0 +1,481 @@
+/* =========================================
+   PROJECT GALLERY
+========================================= */
+/* =========================================
+   PROJECT GALLERY PAGE
+========================================= */
+
+.project-gallery {
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    background: #f8f5ef;
+
+    color: #111;
+
+    /*
+      IMPORTANT:
+      Space for the permanent navbar
+    */
+    padding: 125px 5vw 50px;
+
+    overflow: hidden;
+}
+/* =========================================
+   HEADER
+========================================= */
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 28px;
+}
+
+.gallery-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.gallery-heading h1 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.gallery-heading span {
+    font-family: var(--font-body);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: #777;
+}
+
+.gallery-header > p {
+    margin: 0;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--color-accent);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.gallery-navigation {
+    display: flex;
+
+    gap: 28px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    padding: 17px 0;
+
+    margin-bottom: 35px;
+}
+
+.gallery-nav-link {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #777;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.gallery-nav-link:hover {
+    color: #111;
+}
+
+.gallery-nav-link.active {
+    color: #111;
+}
+
+.gallery-nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -18px;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--color-accent);
+}
+
+
+/* =========================================
+   IMAGE VIEWER
+========================================= */
+
+/* =========================================
+   FULL SIZE IMAGE VIEWER
+========================================= */
+
+.gallery-viewer {
+    position: relative;
+
+    width: 100%;
+
+    height: calc(100vh - 230px);
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 70px;
+}
+
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
+
+.gallery-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   ARCHITECTURAL IMAGE
+========================================= */
+
+.gallery-image {
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    opacity: 0;
+
+    transform: scale(0.98);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    pointer-events: none;
+}
+
+
+.gallery-image.visible {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.gallery-image-wrapper {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.gallery-image {
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    transform: scale(0.985);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    pointer-events: none;
+}
+
+.gallery-image.visible {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.gallery-arrow {
+    position: absolute;
+
+    z-index: 10;
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 0, 0, 0.25);
+
+    background: rgba(248, 245, 239, 0.9);
+
+    color: #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.gallery-arrow:hover {
+    background: var(--color-accent);
+
+    border-color: var(--color-accent);
+
+    color: white;
+
+    transform: scale(1.08);
+}
+
+.gallery-prev {
+    left: 15px;
+}
+
+.gallery-next {
+    right: 15px;
+}
+
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.gallery-counter {
+    position: absolute;
+
+    bottom: 10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+
+    color: #555;
+}
+
+.counter-line {
+    width: 35px;
+
+    height: 1px;
+
+    background: #999;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.gallery-empty {
+    height: 60vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #777;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.gallery-error {
+    min-height: 70vh;
+
+    background: #f8f5ef;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.gallery-error h1 {
+    font-family: var(--font-heading);
+
+    font-size: 3rem;
+
+    font-weight: 400;
+}
+
+.gallery-error a {
+    color: #111;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #111;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .project-gallery {
+        padding: 35px 20px 30px;
+    }
+
+    .gallery-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .gallery-heading {
+        gap: 10px;
+    }
+
+    .gallery-heading h1 {
+        font-size: 3rem;
+    }
+
+    .gallery-navigation {
+        gap: 18px;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        scrollbar-width: none;
+    }
+
+    .gallery-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-viewer {
+        height: calc(100vh - 290px);
+
+        min-height: 400px;
+    }
+
+    .gallery-arrow {
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 17px;
+    }
+
+    .gallery-prev {
+        left: 5px;
+    }
+
+    .gallery-next {
+        right: 5px;
+    }
+
+}

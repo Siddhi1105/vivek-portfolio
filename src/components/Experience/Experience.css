@@ -1,0 +1,658 @@
+/* ==========================================================
+   EXPERIENCE
+========================================================== */
+.experience{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #F8F5EF;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 90px 0;
+}
+
+/* ==========================================================
+   BACKGROUND IMAGE
+========================================================== */
+
+.experience{
+
+    position: relative;
+    overflow: hidden;
+
+}
+.experience-bg{
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:65%;
+    height:100%;
+
+    background-image:url("../../assets/hero/hero-background.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center right;
+
+    opacity:.22;          /* 0.08 varun 0.22 */
+
+    filter:brightness(.75);   /* image thodi dark */
+
+    z-index:1;
+
+}
+.experience-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(248,245,239,.98) 0%,
+        rgba(248,245,239,.90) 28%,
+        rgba(248,245,239,.55) 60%,
+        rgba(248,245,239,.10) 100%
+    );
+
+    z-index:2;
+
+}
+
+.experience .container{
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.experience .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+/* ==========================================================
+   HEADING
+========================================================== */
+
+.experience-heading{
+    margin-bottom:70px;
+}
+
+.experience-label{
+    display:inline-block;
+    font-size:.82rem;
+    letter-spacing:5px;
+    color:var(--color-accent);
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.experience-heading h2{
+    font-family:var(--font-heading);
+    font-size:5rem;
+    font-weight:400;
+    color:#181818;
+    line-height:.95;
+}
+
+/* ==========================================================
+   WRAPPER
+========================================================== */
+
+.experience-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:55px;
+}
+
+/* ==========================================================
+   ITEM
+========================================================== */
+
+.experience-item{
+
+    display:grid;
+
+    grid-template-columns:90px 40px 520px;
+
+    column-gap:30px;
+
+    align-items:flex-start;
+
+}
+
+/* ==========================================================
+   YEAR
+========================================================== */
+
+.experience-year{
+
+    font-family:var(--font-heading);
+
+    font-size:1.9rem;
+
+    font-weight:500;
+
+    color:#C69A63;
+
+    line-height:1;
+
+    padding-top:4px;
+
+}
+
+/* ==========================================================
+   TIMELINE
+========================================================== */
+
+.experience-track{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.track-circle{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    border:2px solid #222;
+
+    background:#F8F5EF;
+
+    transition:.35s;
+
+}
+
+.track-line{
+
+    width:1px;
+
+    height:85px;
+
+    background:#202020;
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.experience-content h3{
+
+    font-family:var(--font-heading);
+
+    font-size:2rem;
+
+    font-weight:400;
+
+    color:#181818;
+
+    margin-bottom:6px;
+
+    transition:.35s;
+
+}
+
+.experience-content span{
+
+    display:block;
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#777;
+
+    margin-bottom:14px;
+
+}
+
+.experience-content p{
+
+    max-width:480px;
+
+    color:#666;
+
+    font-size:.98rem;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.experience-item{
+
+    transition:.35s ease;
+
+}
+
+.experience-item:hover{
+
+    transform:translateX(8px);
+
+}
+
+.experience-item:hover h3{
+
+    color:#C69A63;
+
+}
+
+.experience-item:hover .track-circle{
+
+    background:#C69A63;
+
+    border-color:#C69A63;
+
+    transform:scale(1.15);
+
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (max-width:1400px){
+
+.experience-heading h2{
+
+font-size:4.5rem;
+
+}
+
+.experience-item{
+
+grid-template-columns:80px 35px 500px;
+
+}
+
+}
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width:1200px){
+
+.experience{
+
+padding:80px 0;
+
+}
+
+.experience-heading{
+
+margin-bottom:55px;
+
+}
+
+.experience-heading h2{
+
+font-size:4rem;
+
+}
+
+.experience-wrapper{
+
+gap:45px;
+
+}
+
+.experience-item{
+
+grid-template-columns:75px 30px 1fr;
+
+column-gap:24px;
+
+}
+
+.experience-content p{
+
+max-width:100%;
+
+}
+
+.track-line{
+
+height:70px;
+
+}
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+.experience{
+
+padding:70px 0;
+
+min-height:auto;
+
+}
+
+.experience-heading{
+
+margin-bottom:45px;
+
+}
+
+.experience-label{
+
+letter-spacing:4px;
+
+font-size:.75rem;
+
+}
+
+.experience-heading h2{
+
+font-size:3.4rem;
+
+}
+
+.experience-wrapper{
+
+gap:38px;
+
+}
+
+.experience-item{
+
+grid-template-columns:65px 28px 1fr;
+
+column-gap:18px;
+
+}
+
+.experience-year{
+
+font-size:1.55rem;
+
+}
+
+.track-circle{
+
+width:11px;
+
+height:11px;
+
+}
+
+.track-line{
+
+height:52px;
+
+}
+
+.experience-content h3{
+
+font-size:1.55rem;
+
+}
+
+.experience-content span{
+
+font-size:.8rem;
+
+margin-bottom:10px;
+
+}
+
+.experience-content p{
+
+font-size:.94rem;
+
+line-height:1.65;
+
+}
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+.experience{
+
+padding:60px 22px;
+
+}
+
+.experience-heading{
+
+margin-bottom:36px;
+
+}
+
+.experience-heading h2{
+
+font-size:2.7rem;
+
+}
+
+.experience-label{
+
+font-size:.72rem;
+
+letter-spacing:3px;
+
+}
+
+.experience-wrapper{
+
+gap:28px;
+
+}
+
+.experience-item{
+
+display:grid;
+
+grid-template-columns:55px 22px 1fr;
+
+column-gap:14px;
+
+}
+
+.experience-year{
+
+font-size:1.3rem;
+
+}
+
+.track-circle{
+
+width:10px;
+
+height:10px;
+
+}
+
+.track-line{
+
+height:42px;
+
+}
+
+.experience-content h3{
+
+font-size:1.3rem;
+
+}
+
+.experience-content span{
+
+font-size:.78rem;
+
+margin-bottom:8px;
+
+}
+
+.experience-content p{
+
+font-size:.9rem;
+
+line-height:1.6;
+
+}
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+.experience{
+
+padding:50px 18px;
+
+}
+
+.experience-heading h2{
+
+font-size:2.15rem;
+
+}
+
+.experience-item{
+
+grid-template-columns:50px 20px 1fr;
+
+}
+
+.experience-year{
+
+font-size:1.15rem;
+
+}
+
+.track-line{
+
+height:36px;
+
+}
+
+.experience-content h3{
+
+font-size:1.12rem;
+
+}
+
+.experience-content span{
+
+font-size:.72rem;
+
+letter-spacing:1.5px;
+
+}
+
+.experience-content p{
+
+font-size:.85rem;
+
+line-height:1.55;
+
+}
+
+}
+
+/* ==========================================================
+   INTERACTION
+========================================================== */
+
+.experience-item{
+
+transition:
+transform .35s ease,
+opacity .35s ease;
+
+}
+
+.experience-content h3{
+
+transition:
+transform .35s ease,
+color .35s ease;
+
+}
+
+.track-circle{
+
+transition:
+transform .35s ease,
+background .35s ease,
+border-color .35s ease;
+
+}
+
+.experience-item:hover{
+
+transform:translateX(6px);
+
+}
+
+.experience-item:hover .track-circle{
+
+background:var(--color-accent);
+
+border-color:var(--color-accent);
+
+transform:scale(1.2);
+
+}
+
+.experience-item:hover h3{
+
+color:var(--color-accent);
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+.experience-item,
+.track-circle,
+.experience-content h3{
+
+transition:none;
+
+animation:none;
+
+}
+
+}

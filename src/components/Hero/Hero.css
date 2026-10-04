@@ -1,0 +1,756 @@
+/* =========================================================
+
+HERO
+
+========================================================= */
+
+.hero{
+
+position:relative;
+
+width:100%;
+
+height:100vh;
+
+overflow:hidden;
+
+background:#f8f5ef;
+
+display:flex;
+
+align-items:center;
+
+}
+
+/* =========================================================
+
+IMAGE
+
+========================================================= */
+
+.hero-image{
+
+position:absolute;
+
+top:0;
+
+right:0;
+
+width:58%;
+
+height:100%;
+
+background-image:url("../../assets/hero/hero-background.png");
+
+background-repeat:no-repeat;
+
+background-size:cover;
+
+background-position:center right;
+
+opacity:.92;
+
+z-index:1;
+
+}
+
+/* =========================================================
+
+OVERLAY
+
+========================================================= */
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+
+90deg,
+
+rgba(248,245,239,.98) 0%,
+
+rgba(248,245,239,.94) 30%,
+
+rgba(248,245,239,.72) 58%,
+
+rgba(248,245,239,.15) 100%
+
+);
+
+z-index:2;
+
+}
+
+/* =========================================================
+
+CONTAINER
+
+========================================================= */
+
+.hero-container{
+
+position:relative;
+
+z-index:3;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+height:100%;
+
+}
+
+/* =========================================================
+
+LEFT
+
+========================================================= */
+
+.hero-left{
+
+max-width:620px;
+
+padding-left:40px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+/* =========================================================
+
+ROLE
+
+========================================================= */
+
+.hero-role{
+
+font-size:.85rem;
+
+letter-spacing:10px;
+
+text-transform:uppercase;
+
+color:var(--color-accent);
+
+margin-bottom:30px;
+
+display:inline-block;
+
+}
+
+/* =========================================================
+
+TITLE
+
+========================================================= */
+
+.hero-title{
+
+font-family:var(--font-heading);
+
+font-size:7rem;
+
+font-weight:400;
+
+line-height:.86;
+
+margin:0;
+
+color:#151515;
+
+}
+
+.hero-title .hero-line{
+
+display:block;
+
+}
+
+.hero-title .hero-line:last-child{
+
+margin-top:-8px;
+
+}
+
+/* =========================================================
+
+DESC
+
+========================================================= */
+
+.hero-desc{
+
+margin-top:38px;
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+max-width:470px;
+
+color:#6d6d6d;
+
+}
+
+/* =========================================================
+   HERO ACTION
+========================================================= */
+
+.hero-buttons{
+
+    margin-top:55px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-btn{
+
+    position:relative;
+
+    width:290px;
+
+    height:62px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    border:1px solid #111;
+
+    background:transparent;
+
+    color:#111;
+
+    text-transform:uppercase;
+
+    letter-spacing:2.5px;
+
+    font-size:.88rem;
+
+    font-weight:500;
+
+    transition:.45s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.hero-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-100%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:var(--color-accent);
+
+    transition:left .45s cubic-bezier(.22,.61,.36,1);
+
+    z-index:-1;
+
+}
+
+.hero-btn:hover{
+
+    color:#fff;
+
+    border-color:var(--color-accent);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 45px rgba(198,154,99,.25);
+
+}
+
+.hero-btn:hover::before{
+
+    left:0;
+
+}
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.hero-scroll{
+
+    width:1px;
+
+    height:95px;
+
+    background:rgba(198,154,99,.30);
+
+    margin-top:70px;
+
+    margin-left:145px;
+
+    position:relative;
+
+}
+
+.hero-scroll span{
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--color-accent);
+
+    animation:scrollMove 2s infinite ease-in-out;
+
+}
+
+@keyframes scrollMove{
+
+    0%{
+
+        top:0;
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        top:80px;
+        opacity:1;
+
+    }
+
+    100%{
+
+        top:80px;
+        opacity:0;
+
+    }
+
+}
+
+/* =========================================================
+   HERO ENTRY
+========================================================= */
+
+.hero-left{
+
+    animation:heroContent .9s ease forwards;
+
+}
+
+@keyframes heroContent{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero-image{
+
+    animation:imageReveal 1.2s ease;
+
+}
+
+@keyframes imageReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.08);
+
+    }
+
+    to{
+
+        opacity:.92;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* =========================================================
+   TITLE EFFECT
+========================================================= */
+
+.hero-title .hero-line{
+
+    overflow:hidden;
+
+}
+
+.hero-title .hero-line{
+
+    animation:titleUp .8s ease forwards;
+
+}
+
+.hero-title .hero-line:last-child{
+
+    animation-delay:.15s;
+
+}
+
+@keyframes titleUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (max-width:1400px){
+
+.hero-left{
+
+padding-left:20px;
+
+}
+
+.hero-title{
+
+font-size:6.3rem;
+
+}
+
+.hero-image{
+
+width:55%;
+
+background-size:cover;
+
+background-position:right center;
+
+}
+
+}
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width:1200px){
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-left{
+
+max-width:680px;
+
+padding-left:0;
+
+margin:auto;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.hero-title{
+
+font-size:5.5rem;
+
+}
+
+.hero-desc{
+
+max-width:540px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-scroll{
+
+margin-left:0;
+
+}
+
+.hero-image{
+
+width:100%;
+
+opacity:.12;
+
+background-position:center;
+
+background-size:80%;
+
+}
+
+.hero-overlay{
+
+background:rgba(248,245,239,.90);
+
+}
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+.hero{
+
+padding-top:90px;
+
+min-height:100svh;
+
+}
+
+.hero-title{
+
+font-size:4.4rem;
+
+}
+
+.hero-role{
+
+letter-spacing:7px;
+
+}
+
+.hero-desc{
+
+font-size:1.05rem;
+
+line-height:1.8;
+
+}
+
+.hero-btn{
+
+width:250px;
+
+height:56px;
+
+font-size:.82rem;
+
+}
+
+.hero-scroll{
+    margin-top: 60px;
+    height: 80px;
+}
+
+.hero-scroll span{
+    width: 2px;
+    height: 60px;
+    background: rgba(198,154,99,.35);
+    display: block;
+    position: relative;
+}
+
+.hero-scroll span::after{
+    content:"↓";
+    position:absolute;
+    bottom:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:20px;
+    color:var(--color-accent);
+}
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+.hero{
+
+padding-inline:20px;
+
+}
+
+.hero-left{
+
+width:100%;
+
+}
+
+.hero-title{
+
+font-size:3.3rem;
+
+line-height:.92;
+
+}
+
+.hero-title .hero-line:last-child{
+
+margin-top:-4px;
+
+}
+
+.hero-role{
+
+font-size:.72rem;
+
+letter-spacing:5px;
+
+margin-bottom:18px;
+
+}
+
+.hero-desc{
+
+    margin-top:20px;
+
+    margin-bottom:38px;
+
+    max-width:560px;
+
+    font-size:1.45rem;
+
+    line-height:1.75;
+
+    font-weight:400;
+
+    color:#666;
+
+}
+
+.hero-buttons{
+
+margin-top:36px;
+
+}
+
+.hero-btn{
+
+width:220px;
+
+height:52px;
+
+font-size:.75rem;
+
+}
+
+.hero-image{
+
+background-size:95%;
+
+opacity:.08;
+
+}
+
+}
+
+/* ==========================================================
+   SMALL DEVICES
+========================================================== */
+
+@media (max-width:480px){
+
+.hero-title{
+
+font-size:2.7rem;
+
+}
+
+.hero-desc{
+
+font-size:.9rem;
+
+}
+
+.hero-btn{
+
+width:210px;
+
+}
+
+}
+
+/* ==========================================================
+   SMOOTH
+========================================================== */
+
+.hero-btn,
+.hero-image,
+.hero-title,
+.hero-left{
+
+will-change:transform,opacity;
+
+}
